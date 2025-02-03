@@ -1,0 +1,17 @@
+{
+  "name": "event_services",
+  "version": "1.0.0",
+  "description": "This is the event sourcing microservice",
+  "main": "eventServer.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon eventServer.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.3"
+  }
+}
