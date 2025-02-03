@@ -12,7 +12,7 @@ export async function getItem(query, filter, type, token) {
                 headers: { 'authorization': token },
                 params: { name: { $regex: query, $options: 'i' } }
             }
-            const result = await axios.get('http://localhost:3002/authors', config)
+            const result = await axios.get('https://library-author-microservices.onrender.com/authors', config)
             searchResult.author = result.data
         }
 
@@ -25,7 +25,7 @@ export async function getItem(query, filter, type, token) {
                     genre: filter
                 }
             }
-            const result = await axios.get('http://localhost:3003/books', config)
+            const result = await axios.get('https://library-book-microservices.onrender.com/books', config)
             searchResult.book = result.data
         }
 

@@ -6,7 +6,7 @@ export async function postData(data, token) {
         const config = {
             headers: { 'authorization': token }
         }
-        const bookExists = await axios.get(`http://localhost:3003/books/${data.book}`, config)
+        const bookExists = await axios.get(`https://library-book-microservices.onrender.com/books/${data.book}`, config)
         if (!bookExists) {
             throw new Error('Referenced book does not exist')
         }

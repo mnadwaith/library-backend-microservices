@@ -11,7 +11,7 @@ export async function deleteData(filter, token) {
             headers: { 'updateOpp': '$pull', 'authorization': token }
         }
 
-        await axios.put(`http://localhost:3002/authors/${currentAuthor}`, { books: filter }, config)
+        await axios.put(`https://library-author-microservices.onrender.com/authors/${currentAuthor}`, { books: filter }, config)
         output = await bookModel.findByIdAndDelete(filter)
         return output
     } catch (error) {

@@ -13,11 +13,11 @@ export async function updateData(filter, newData, token) {
             let config = {
                 headers: { 'updateOpp': '$pull', 'authorization': token }
             }
-            await axios.put(`http://localhost:3002/authors/${currentAuthor}`, { books: filter._id }, config)
+            await axios.put(`https://library-author-microservices.onrender.com/authors/${currentAuthor}`, { books: filter._id }, config)
             config = {
                 headers: { 'updateOpp': '$push', 'authorization': token }
             }
-            await axios.put(`http://localhost:3002/authors/${newAuthor}`, { books: filter._id }, config)
+            await axios.put(`https://library-author-microservices.onrender.com/authors/${newAuthor}`, { books: filter._id }, config)
         }
         return output
     } catch (error) {

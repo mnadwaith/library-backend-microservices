@@ -40,7 +40,7 @@ async function getBooksById(req, res) {
 // Create new book
 async function createNewBook(req, res) {
     try {
-        const socket = io(process.env.URL)
+        const socket = io(process.env.SOCKET_URL)
         let data = req.body
         let output = await postData(data, req.headers.Authorization || req.headers.authorization)
         // Web socket Communication
@@ -54,7 +54,7 @@ async function createNewBook(req, res) {
 // Delete a book
 async function deleteBook(req, res) {
     try {
-        const socket = io(process.env.URL)
+        const socket = io(process.env.SOCKET_URL)
         let filter = req.params.id
         let output = await deleteData(filter, req.headers.Authorization || req.headers.authorization)
         // Web socket Communication
@@ -68,7 +68,7 @@ async function deleteBook(req, res) {
 // Delete a book
 async function updateBook(req, res) {
     try {
-        const socket = io(process.env.URL)
+        const socket = io(process.env.SOCKET_URL)
         let filter = { _id: req.params.id }
         let newData = req.body
         let output = await updateData(filter, newData, req.headers.Authorization || req.headers.authorization)

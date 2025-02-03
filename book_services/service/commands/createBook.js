@@ -12,7 +12,7 @@ export async function postData(data, token) {
                 headers: { 'authorization': token }
             }
             //Validating the author id
-            const authorExists = await axios.get(`http://localhost:3002/authors/${item.author}`, config)
+            const authorExists = await axios.get(`https://library-author-microservices.onrender.com/authors/${item.author}`, config)
             if (!authorExists) {
                 throw new Error('Referenced author does not exist')
             }
@@ -21,7 +21,7 @@ export async function postData(data, token) {
             config = {
                 headers: { 'updateOpp': '$push', 'authorization': token }
             }
-            await axios.put(`http://localhost:3002/authors/${item.author}`, { books: output._id }, config)
+            await axios.put(`https://library-author-microservices.onrender.com/authors/${item.author}`, { books: output._id }, config)
             result.push(output)
         }
         return result;

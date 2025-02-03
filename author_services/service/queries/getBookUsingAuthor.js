@@ -6,7 +6,7 @@ export async function getBooksByAuthor(query, token) {
             headers: { 'authorization': token },
             params: query
         }
-        const cursor = await axios.get('http://localhost:3003/books/', config)
+        const cursor = await axios.get('https://library-book-microservices.onrender.com/books/', config)
         return cursor.data
     } catch (error) {
         console.log('Error' + error.message)
