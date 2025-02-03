@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export async function tokenVerification(req, res, next) {
     try {
-        let token = await axios.get('http://localhost:3001/auth/authenticate', { headers: { Authorization: req.headers.Authorization || req.headers.authorization } })
+        let token = await axios.get('https://library-auth-microservices.onrender.com/auth/authenticate', { headers: { Authorization: req.headers.Authorization || req.headers.authorization } })
         req.user = token.data
         next()
     } catch (error) {
