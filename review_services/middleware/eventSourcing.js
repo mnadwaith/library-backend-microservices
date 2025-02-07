@@ -17,7 +17,7 @@ export function eventLogging(entity) {
                     ...req.params
                 }
             }
-            await axios.post('http://localhost:3004/events/', { entity: entity, operation: operation, data: data, timestamp: new Date().toISOString() }, { timeout: 5000 })
+            await axios.post('https://library-event-microservices.onrender.com/events/', { entity: entity, operation: operation, data: data, timestamp: new Date().toISOString() }, { timeout: 5000 })
             next()
         } catch (error) {
             console.log(error.message)

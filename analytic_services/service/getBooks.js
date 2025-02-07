@@ -10,7 +10,7 @@ export async function getData(token) {
                 'limit': 3
             }
         }
-        const output = await axios.get('http://localhost:3005/review', config)
+        const output = await axios.get('https://library-review-microservices.onrender.com/review', config)
         return output.data
     } catch (error) {
         console.log(error.message)

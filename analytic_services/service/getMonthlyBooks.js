@@ -9,7 +9,7 @@ export async function getBookPM() {
                 'operation': 'CREATE'
             }
         }
-        const output = await axios.get('http://localhost:3004/events', config)
+        const output = await axios.get('https://library-event-microservices.onrender.com/events', config)
         return output.data
     } catch (error) {
         console.log(error.message)
